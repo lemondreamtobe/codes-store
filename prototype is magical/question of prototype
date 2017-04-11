@@ -1,0 +1,33 @@
+//Object Literal
+
+var a = {
+	name: "linfeng",
+	age: 22
+};
+//Object Constructor
+
+var b = new Object();
+b.name = "zhanglin";
+b.age = 22;
+
+//here we can know
+
+a instanceof Object //true
+b insatnceof Object //true
+
+//here something go wrong
+
+a.prototype instanceOf Object //false
+b.prototype instanceOf Object //false
+
+//maybe u will doubt:if a.prototype isn't an Object?
+
+//here we go
+//JS's prototype only exists in function.such as:Array Date Object and so on
+//so "a.prototype",this prototype just  is a's attribute,but not real prototype
+
+Object.prototype.color = "red" //true
+a.prototype.color = "blue" //wrong! appear TypeError!
+
+//because u can't set attribute to attribute.Now,u can know why "a.prototype instanceOf Object" is false
+//this type of "Object" has not constructor function,so they has not prototype except we set it for them.
