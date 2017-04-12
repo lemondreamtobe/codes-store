@@ -51,4 +51,4 @@ var factorial = (function f(num) {
 var alternatename = factorial;
 factorial = null;
 alternatename(10);3628800.That's OK.
-
+//most of codes form the book of Nicolas.the man is very very great.
