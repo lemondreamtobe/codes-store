@@ -74,5 +74,13 @@ var EventUtil = {
                     return 1;
              }
        }
-   }
+   },
+   getCharCode: function(event) {
+        
+        if (typeof event.charCode == "number") {
+            return event.charCode;
+        } else {
+            return event.keyCode;
+        }
+    }
 }
