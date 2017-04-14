@@ -42,5 +42,37 @@ var EventUtil = {
         } else {
             event.cancelBubble = true;
         }
-    }
+    },
+    getRelatedTarget: function(event) {
+        
+        if (event.relatedTarget) {
+            return event.relatedTarget;
+        } else if (event.toElement) {
+            return event.toElement;
+        } else if (event.fromElement) {
+            return event.fromElement;
+        } else {
+            return null
+        }
+    },
+    getButton: function(event) {
+        
+        if (document.implementation.hasFeature("MouseEvents", "2.0")) {
+            return event.button;
+        } else {
+            switch (event.button) {
+                case0 :
+                case1 :
+                case3 :
+                case5 :
+                case7 :
+                    return 0;
+                case2 :
+                case6 :
+                    return 2;
+                case4 :
+                    return 1;
+             }
+       }
+   }
 }
