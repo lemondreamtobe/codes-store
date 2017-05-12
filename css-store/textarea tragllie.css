@@ -1,0 +1,4 @@
+/*Remove the triangle of textarea*/
+textarea{
+	resize:none;
+}
